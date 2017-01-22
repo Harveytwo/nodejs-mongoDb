@@ -1,7 +1,4 @@
-# nodejs-mongoDb
-nodejs + mongoDb 前后端分离开发
 #基于 nodejs 和 mongoDb 的前后端分离开发
-
 目录结构：
 <pre>
     ├── controllers     //数据库相关操作目录
@@ -79,8 +76,11 @@ module.exports = app;
 
 ##运行项目
 > 先安装 supervisor 提高 nodejs 调试效率
+> 
 > 安装相关依赖 npm isntall
+> 
 > 建议使用淘宝镜像 cnpm 安装比较快
+> 
 > 安装完毕，运行项目 supervisor app.js
 
 浏览器输入 localhost:3000
@@ -345,3 +345,8 @@ exports.logout = function(req,res) {
 }
 
 ```
+
+**至此，我们已经把用户登录、注册、注销登录和查询已注册用户的接口写好了。
+
+接下来就是部署到服务器上了，这个留着下节再讲...
+哈哈，我也还没弄懂很多，半桶水，只是简单部署到服务器，但数据库方面和 Nginx 方面还需研究，下次弄懂，再一起补充啦！
