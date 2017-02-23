@@ -183,6 +183,7 @@ var UserSchema = new mongoose.Schema({
   }
 })
 
+// middleware 在存入数据库之前的一些 do stuff
 UserSchema.pre('save', function(next) {
   var user = this
 
@@ -204,6 +205,8 @@ UserSchema.pre('save', function(next) {
     })
   })
 })
+
+// 实例方法，提供公共的方法，即这个是查询后单个文档可以直接调用 methods 的方法
 //定义密码的比较方法，登录时需要用到
 UserSchema.methods = {
   comparePassword: function(_password, cb) {
@@ -215,6 +218,7 @@ UserSchema.methods = {
   }
 }
 
+// 静态方法，在Model层就能使用，即在 require Model 层进来后，可以使用 statics 的方法
 //定义相关的查询方法，需要时可以调用
 UserSchema.statics = {
   fetch: function(cb) {
